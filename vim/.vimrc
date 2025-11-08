@@ -2,37 +2,22 @@
 syntax on
 filetype plugin indent on
 
+if filereadable(expand("~/.vim/config/mapping.vim"))
+  source ~/.vim/config/mapping.vim
+endif
+
 " UI enhancements
-set number
-set cursorline
+set number                                 
+set cursorline                             
+set nowrap                                 
 
-" Status line
-set laststatus=2
-set statusline=%t\ %y\ [%{&fileencoding}]%=\ %l:%c\ %L\ [%p%%]
+set mouse=a
 
-" Clipboard
-set clipboard=unnamedplus
-
-" Leader key
-let mapleader = " "
-
-" Key mappings
-nnoremap <F5> :w<CR>:call RunFile()<CR>
-nnoremap <leader>f :Vifm<CR>
-nnoremap <leader>n :NERDTreeToggle<CR>
-nnoremap <leader>t :terminal<CR>
-nnoremap <leader>w :w<CR>
-nnoremap <leader>q :q<CR>
-nnoremap <leader>s /#
-
-
-" Use <Tab> and <S-Tab> to navigate popup menu
-inoremap <expr> <Tab> pumvisible() ? "\<C-n>" : "\<Tab>"
-inoremap <expr> <S-Tab> pumvisible() ? "\<C-p>" : "\<S-Tab>"
-
-" Use <CR> (Enter) to accept completion only when popup menu is visible
-inoremap <expr> <CR> pumvisible() ? coc#_select_confirm() : "\<CR>"
-
+" Status line                              
+set laststatus=2                           
+set statusline=%t\ %y\ [%{&fileencoding}]%=
+" Clipboard                                
+set clipboard=unnamedplus 
 
 " Function to run supported files
 function! RunFile()
