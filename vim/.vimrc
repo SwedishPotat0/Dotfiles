@@ -38,17 +38,10 @@ call plug#begin('~/.vim/plugged')
 
 " Plugins 
 Plug 'vifm/vifm.vim'
-Plug 'preservim/nerdtree'
-Plug 'neoclide/coc.nvim', {'branch': 'release'}
-Plug 'EdenEast/nightfox.nvim'
 Plug 'jiangmiao/auto-pairs'
+Plug 'SwedishPotat0/waypoint.vim'
 
 call plug#end()
 
 " Color scheme
 set background=dark
-
-colorscheme carbonfox
-" colorscheme nordfox
-" colorscheme terafox
-" colorscheme nightfox
